@@ -22,6 +22,7 @@
     "otp input",
     "react otp input"
   ],
+  "typings": "typings/index.d.ts",
   "author": "Łukasz Warchoł (https://lukaszwarchol.pl/)",
   "license": "MIT",
   "bugs": {
