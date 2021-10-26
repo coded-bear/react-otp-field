@@ -6,10 +6,11 @@ interface OtpInputProps {
     type?: string,
     value: string,
     onChange: Function,
-    fieldsLength?: number,
+    numInputs?: number,
     onChangeRegex?: RegExp,
     classNames?: string,
     autoComplete?: string,
+    autoFocus?: boolean,
     inputProps?: Object,
 }
 
