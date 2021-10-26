@@ -1,5 +1,99 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-const OtpInput = () => <h1>Otp Input</h1>;
+import { generateDefaultValues, isValid, focusOnNextInput } from './utils';
+
+const OtpInput = ({
+  type = 'text',
+  value = '',
+  onChange = (value) => console.log(value),
+  numInputs = 4,
+  onChangeRegex,
+  classNames = 'otp-input',
+  autoComplete = 'off',
+  autoFocus = false,
+  inputProps,
+}) => {
+  const defaultValues = generateDefaultValues(numInputs, value.split(''));
+  const [values, setValues] = useState(defaultValues);
+  const [focusInput, setFocusInput] = useState(autoFocus ? 0 : null);
+  const inputRefs = useRef([]);
+
+  useEffect(() => {
+    setValues(defaultValues);
+  }, [value]);
+
+  useEffect(() => {
+    const input = inputRefs.current[focusInput];
+    !!input && input.focus();
+  }, [focusInput]);
+
+  const handleChange = (inputValue, index) => {
+    if (!!onChangeRegex && !isValid(onChangeRegex, inputValue)) return;
+
+    const newValues = [...values];
+
+    // adding and removing values
+    let j = 0;
+    values.forEach((element, i) => {
+      const isNewValuesAndAnyEmptyInput = !element && !!inputValue;
+      const isActionRemoveInputValue = !!element && index === i && !inputValue;
+
+      if (isNewValuesAndAnyEmptyInput) {
+        newValues[i] = inputValue.split('')[!values[index] ? j : j + 1] || '';
+        j++;
+      } else if (isActionRemoveInputValue) {
+        newValues[i] = '';
+      }
+    });
+
+    if (inputValue) {
+      focusOnNextInput(newValues, values, setFocusInput);
+    }
+
+    onChange(newValues.join(''));
+  };
+
+  const onKeyPressed = (key, index) => {
+    switch (key) {
+      case 'Backspace':
+      case 'ArrowLeft':
+        return setFocusInput(index - 1);
+      case 'ArrowRight':
+        return setFocusInput(index + 1);
+      default:
+        return;
+    }
+  };
+
+  return (
+    <div className={classNames}>
+      {values.map((element, index) => (
+        <input
+          key={index}
+          ref={(el) => (inputRefs.current[index] = el)}
+          type={type}
+          value={element}
+          onChange={(e) => handleChange(e.target.value, index)}
+          autoComplete={index === 0 ? autoComplete : 'off'}
+          onKeyDown={({ key }) => onKeyPressed(key, index)}
+          {...inputProps}
+        />
+      ))}
+    </div>
+  );
+};
+
+OtpInput.propTypes = {
+  type: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onChange: PropTypes.func.isRequired,
+  numInputs: PropTypes.number.isRequired,
+  onChangeRegex: PropTypes.instanceOf(RegExp),
+  classNames: PropTypes.string,
+  autoComplete: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  inputProps: PropTypes.object,
+};
 
 export default OtpInput;
