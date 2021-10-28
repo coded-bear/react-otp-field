@@ -26,6 +26,7 @@ const OtpInput = ({
   classNames = 'otp-input',
   autoComplete = 'off',
   autoFocus = false,
+  separator,
   inputProps,
 }) => {
   const defaultValues = generateDefaultValues(numInputs, value.split(''));
@@ -83,18 +84,21 @@ const OtpInput = ({
   return (
     <div className={classNames}>
       {values.map((element, index) => (
-        <input
-          key={index}
-          ref={(el) => (inputRefs.current[index] = el)}
-          type={type}
-          value={element}
-          onChange={(e) => handleChange(e.target.value, index)}
-          aria-label={labelText}
-          aria-required="true"
-          autoComplete={index === 0 ? autoComplete : 'off'}
-          onKeyDown={({ key }) => onKeyPressed(key, index)}
-          {...inputProps}
-        />
+        <div key={index}>
+          <input
+            ref={(el) => (inputRefs.current[index] = el)}
+            type={type}
+            value={element}
+            onChange={(e) => handleChange(e.target.value, index)}
+            aria-label={labelText}
+            aria-required="true"
+            autoComplete={index === 0 ? autoComplete : 'off'}
+            onKeyDown={({ key }) => onKeyPressed(key, index)}
+            {...inputProps}
+          />
+
+          {index !== values.length - 1 && separator && separator}
+        </div>
       ))}
     </div>
   );
@@ -110,6 +114,7 @@ OtpInput.propTypes = {
   classNames: PropTypes.string,
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
+  separator: PropTypes.node,
   inputProps: PropTypes.object,
 };
 

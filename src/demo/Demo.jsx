@@ -16,6 +16,7 @@ const Demo = () => {
         numInputs={6}
         onChangeRegex={/^([0-9]{0,})$/}
         autoFocus
+        separator={<span>-</span>}
         inputProps={{ className: 'otp-input__input', disabled: false }}
       />
     </div>
