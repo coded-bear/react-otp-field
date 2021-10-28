@@ -6,9 +6,9 @@
     width: $input-size;
     height: $input-size;
     margin: 0 10px;
-    border: 2px solid $border-color;
+    border: 2px solid $color-gray;
     border-radius: 5px;
-    color: $active-color;
+    color: $color-blue;
     box-sizing: border-box;
     font-size: $input-size / 2;
     font-weight: 700;
@@ -27,8 +27,13 @@
     }
 
     &:focus {
-      border-color: $active-color;
+      border-color: $color-blue;
       outline: none;
+    }
+
+    &:disabled {
+      background-color: $color-lightgray;
+      color: $color-gray;
     }
   }
 }

@@ -16,7 +16,7 @@ const Demo = () => {
         numInputs={6}
         onChangeRegex={/^([0-9]{0,})$/}
         autoFocus
-        inputProps={{ className: 'otp-input__input' }}
+        inputProps={{ className: 'otp-input__input', disabled: false }}
       />
     </div>
   );
