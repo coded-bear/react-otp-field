@@ -8,6 +8,7 @@ interface OtpInputProps {
     onChange: Function,
     numInputs?: number,
     onChangeRegex?: RegExp,
+    labelText?: string,
     classNames?: string,
     autoComplete?: string,
     autoFocus?: boolean,

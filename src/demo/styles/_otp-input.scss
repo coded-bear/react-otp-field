@@ -1,0 +1,34 @@
+.otp-input {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    width: $input-size;
+    height: $input-size;
+    margin: 0 10px;
+    border: 2px solid $border-color;
+    border-radius: 5px;
+    color: $active-color;
+    box-sizing: border-box;
+    font-size: $input-size / 2;
+    font-weight: 700;
+    text-align: center;
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    &:focus {
+      border-color: $active-color;
+      outline: none;
+    }
+  }
+}

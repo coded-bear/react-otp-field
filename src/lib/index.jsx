@@ -9,6 +9,7 @@ const OtpInput = ({
   onChange = (value) => console.log(value),
   numInputs = 4,
   onChangeRegex,
+  labelText = 'Enter verification code',
   classNames = 'otp-input',
   autoComplete = 'off',
   autoFocus = false,
@@ -75,6 +76,8 @@ const OtpInput = ({
           type={type}
           value={element}
           onChange={(e) => handleChange(e.target.value, index)}
+          aria-label={labelText}
+          aria-required="true"
           autoComplete={index === 0 ? autoComplete : 'off'}
           onKeyDown={({ key }) => onKeyPressed(key, index)}
           {...inputProps}
@@ -90,6 +93,7 @@ OtpInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   numInputs: PropTypes.number.isRequired,
   onChangeRegex: PropTypes.instanceOf(RegExp),
+  labelText: PropTypes.string,
   classNames: PropTypes.string,
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
