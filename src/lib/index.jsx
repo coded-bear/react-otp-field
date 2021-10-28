@@ -1,7 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { generateDefaultValues, isValid, focusOnNextInput } from './utils';
+const generateDefaultValues = (length, inputValues) => {
+  return Array.from({ length }, (_, i) => inputValues[i] || '');
+};
+
+const isValid = (regex, value) => regex.test(value);
+
+const focusOnNextInput = (newValues, currentValues, setFocusInput) => {
+  for (let [i, element] of newValues.entries()) {
+    if (!element || i === currentValues.length - 1) {
+      setFocusInput(i);
+      break;
+    }
+  }
+};
 
 const OtpInput = ({
   type = 'text',
