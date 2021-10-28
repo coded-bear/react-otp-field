@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 
 import './styles/main.scss';
 
@@ -23,4 +22,4 @@ const Demo = () => {
   );
 };
 
-render(<Demo />, document.getElementById('root'));
+export default Demo;
