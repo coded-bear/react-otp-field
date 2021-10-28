@@ -61,7 +61,7 @@ Customizable OTP Input component for the web built with React.js
             <td>labelText</td>
             <td>String</td>
             <td>false</td>
-            <td>none</td>
+            <td>'Enter verification code'</td>
             <td>Aria-label attribute for inputs.</td>
         </tr>
         <tr>
