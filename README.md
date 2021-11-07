@@ -1,5 +1,7 @@
 # react-otp-field
 
+[![npm version](https://img.shields.io/npm/v/react-otp-field)](https://www.npmjs.com/package/react-otp-field) [![npm](https://img.shields.io/npm/l/react-otp-field)](https://github.com/coded-bear/react-otp-field/blob/main/LICENSE) [![npm](https://img.shields.io/bundlephobia/minzip/react-otp-field)](https://www.npmjs.com/package/react-otp-field)
+
 Customizable OTP Field component for the web built with React.js
 
 [Live Demo](https://coded-bear.github.io/react-otp-field/)
