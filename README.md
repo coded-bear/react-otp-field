@@ -16,13 +16,6 @@ Customizable OTP Input component for the web built with React.js
     </thead>
     <tbody>
         <tr>
-            <td>type</td>
-            <td>String</td>
-            <td>false</td>
-            <td>'text'</td>
-            <td>Type inputs.</td>
-        </tr>
-        <tr>
             <td>value</td>
             <td>String</td>
             <td>true</td>
@@ -44,13 +37,6 @@ Customizable OTP Input component for the web built with React.js
             <td>Number of inputs.</td>
         </tr>
         <tr>
-            <td>classNames</td>
-            <td>String</td>
-            <td>false</td>
-            <td>'otp-input'</td>
-            <td>Class names for OTP Input component.</td>
-        </tr>
-        <tr>
             <td>onChangeRegex</td>
             <td>RegEx</td>
             <td>false</td>
@@ -63,6 +49,13 @@ Customizable OTP Input component for the web built with React.js
             <td>false</td>
             <td>'Enter verification code'</td>
             <td>Aria-label attribute for inputs.</td>
+        </tr>
+        <tr>
+            <td>classNames</td>
+            <td>String</td>
+            <td>false</td>
+            <td>'otp-input'</td>
+            <td>Class names for OTP Input component.</td>
         </tr>
         <tr>
             <td>autoComplete</td>
@@ -86,6 +79,20 @@ Customizable OTP Input component for the web built with React.js
             <td>Separator between inputs.</td>
         </tr>
         <tr>
+            <td>isTypeNumber</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>false</td>
+            <td>Type number for inputs.</td>
+        </tr>
+        <tr>
+            <td>hasErrored</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>false</td>
+            <td>Error class 'otp-input--has-errored' for otp-input component.</td>
+        </tr>
+        <tr>
             <td>inputProps</td>
             <td>Object</td>
             <td>false</td>
@@ -94,3 +101,11 @@ Customizable OTP Input component for the web built with React.js
         </tr>
     </tbody>
 </table>
+
+## Development
+
+#### Run the development server:
+
+```
+npm run dev
+```
