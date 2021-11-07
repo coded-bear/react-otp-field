@@ -2,7 +2,7 @@
 
 Customizable OTP Input component for the web built with React.js
 
-## API:
+## API
 
 <table>
     <thead>
