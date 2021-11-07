@@ -69,7 +69,7 @@ const Demo = () => {
           <Checkbox name="hasErrored" checked={config.hasErrored} onChange={updateConfig} labelText="hasErrored" />
         </div>
 
-        <a className="link" href="https://github.com/coded-bear/react-otpinput" target="_blank">
+        <a className="link" href="https://github.com/coded-bear/react-otp-field" target="_blank">
           Documentation and Source
         </a>
       </div>
