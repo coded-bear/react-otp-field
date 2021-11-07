@@ -2,6 +2,8 @@
 
 Customizable OTP Field component for the web built with React.js
 
+[Live Demo](https://coded-bear.github.io/react-otp-field/)
+
 ## Installation
 
 ```
