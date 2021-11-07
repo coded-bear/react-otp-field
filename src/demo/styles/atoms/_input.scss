@@ -1,0 +1,18 @@
+.input {
+  position: relative;
+  display: block;
+
+  &__label-text {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 2px solid $color-gray;
+    border-radius: 5px;
+    background-color: $color-white;
+    font-weight: 500;
+  }
+}

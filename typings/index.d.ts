@@ -3,7 +3,6 @@ import * as React from 'react';
 declare const OtpInput: React.FunctionComponent<OtpInputProps>;
 
 interface OtpInputProps {
-    type?: string,
     value: string,
     onChange: Function,
     numInputs?: number,
@@ -13,6 +12,8 @@ interface OtpInputProps {
     autoComplete?: string,
     autoFocus?: boolean,
     separator?: JSX.Element,
+    isTypeNumber: boolean,
+    hasErrored?: boolean,
     inputProps?: Object,
 }
 

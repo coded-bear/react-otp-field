@@ -1,7 +1,35 @@
 .demo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
+
+  @media (max-width: $md) {
+    flex-direction: column;
+  }
+
+  &__config-view {
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: $color-lightgray;
+
+    @media (max-width: $md) {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+
+    @media (max-width: $md) {
+      min-height: auto;
+      margin-top: 20px;
+    }
+  }
 }

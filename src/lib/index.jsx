@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const generateDefaultValues = (length, inputValues) => {
+  if (length < 1) return [];
   return Array.from({ length }, (_, i) => inputValues[i] || '');
 };
 
@@ -17,7 +18,6 @@ const focusOnNextInput = (newValues, currentValues, setFocusInput) => {
 };
 
 const OtpInput = ({
-  type = 'text',
   value = '',
   onChange = (value) => console.log(value),
   numInputs = 4,
@@ -27,6 +27,8 @@ const OtpInput = ({
   autoComplete = 'off',
   autoFocus = false,
   separator,
+  isTypeNumber = false,
+  hasErrored = false,
   inputProps,
 }) => {
   const defaultValues = generateDefaultValues(numInputs, value.split(''));
@@ -36,7 +38,7 @@ const OtpInput = ({
 
   useEffect(() => {
     setValues(defaultValues);
-  }, [value]);
+  }, [value, numInputs]);
 
   useEffect(() => {
     const input = inputRefs.current[focusInput];
@@ -82,12 +84,12 @@ const OtpInput = ({
   };
 
   return (
-    <div className={classNames}>
+    <div className={`${classNames} ${hasErrored ? 'otp-input--has-errored' : ''}`.trim()}>
       {values.map((element, index) => (
         <div key={index}>
           <input
             ref={(el) => (inputRefs.current[index] = el)}
-            type={type}
+            type={isTypeNumber ? 'number' : 'text'}
             value={element}
             onChange={(e) => handleChange(e.target.value, index)}
             aria-label={labelText}
@@ -105,7 +107,6 @@ const OtpInput = ({
 };
 
 OtpInput.propTypes = {
-  type: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   numInputs: PropTypes.number.isRequired,
@@ -115,6 +116,8 @@ OtpInput.propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
   separator: PropTypes.node,
+  isTypeNumber: PropTypes.bool,
+  hasErrored: PropTypes.bool,
   inputProps: PropTypes.object,
 };
 

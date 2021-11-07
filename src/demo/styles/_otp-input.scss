@@ -1,11 +1,14 @@
 .otp-input {
+  $root: &;
+
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   &__input {
     width: $input-size;
     height: $input-size;
-    margin: 0 10px;
+    margin: 10px;
     border: 2px solid $color-gray;
     border-radius: 5px;
     color: $color-blue;
@@ -34,6 +37,12 @@
     &:disabled {
       background-color: $color-lightgray;
       color: $color-gray;
+    }
+  }
+
+  &--has-errored {
+    #{$root}__input {
+      border-color: $color-error;
     }
   }
 }
