@@ -1,6 +1,6 @@
-# react-otpinput
+# react-otp-field
 
-Customizable OTP Input component for the web built with React.js
+Customizable OTP Field component for the web built with React.js
 
 ## API
 
@@ -20,7 +20,7 @@ Customizable OTP Input component for the web built with React.js
             <td>String</td>
             <td>true</td>
             <td>''</td>
-            <td>The value of the OTP Input.</td>
+            <td>The value of the OTP Field.</td>
         </tr>
         <tr>
             <td>onChange</td>
@@ -54,8 +54,8 @@ Customizable OTP Input component for the web built with React.js
             <td>classNames</td>
             <td>String</td>
             <td>false</td>
-            <td>'otp-input'</td>
-            <td>Class names for OTP Input component.</td>
+            <td>'otp-field'</td>
+            <td>Class names for OTP Field component.</td>
         </tr>
         <tr>
             <td>autoComplete</td>
@@ -90,7 +90,7 @@ Customizable OTP Input component for the web built with React.js
             <td>Boolean</td>
             <td>false</td>
             <td>false</td>
-            <td>Error class 'otp-input--has-errored' for otp-input component.</td>
+            <td>Error class 'otp-field--has-errored' for otp-field component.</td>
         </tr>
         <tr>
             <td>inputProps</td>

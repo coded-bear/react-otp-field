@@ -1,7 +1,7 @@
 {
   "name": "react-otp-field",
-  "version": "1.1.0",
-  "description": "Customizable OTP Input component for the web built with React.js",
+  "version": "2.0.0",
+  "description": "Customizable OTP Field component for the web built with React.js",
   "main": "lib/index.js",
   "scripts": {
     "dev": "concurrently \"npm run build:watch\" \"npm run demo:dev\"",
@@ -18,20 +18,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coded-bear/react-otpinput.git"
+    "url": "git+https://github.com/coded-bear/react-otp-field.git"
   },
   "keywords": [
     "otp",
     "otp input",
+    "otp field",
     "react otp input",
     "react otp field"
   ],
   "typings": "typings/index.d.ts",
   "author": "Łukasz Warchoł (https://lukaszwarchol.pl/)",
-  "homepage": "https://coded-bear.github.io/react-otpinput",
+  "homepage": "https://coded-bear.github.io/react-otp-field",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coded-bear/react-otpinput/issues"
+    "url": "https://github.com/coded-bear/react-otp-field/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",

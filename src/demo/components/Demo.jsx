@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { numInputsLimit, numInputsLimitValidation } from '../utils';
 
-import OtpInput from '../../lib';
+import OtpField from '../../lib';
 import Input from './atoms/Input';
 import Checkbox from './atoms/Checkbox';
 
@@ -32,7 +32,7 @@ const Demo = () => {
     <div className="demo">
       <div className="demo__config-view">
         <div>
-          <h1 className="h1">react-otpinput</h1>
+          <h1 className="h1">react-otp-field</h1>
 
           <Input
             type="number"
@@ -75,7 +75,7 @@ const Demo = () => {
       </div>
 
       <div className="demo__content">
-        <OtpInput
+        <OtpField
           value={value}
           onChange={setValue}
           numInputs={Number(config.numInputs)}
@@ -84,7 +84,7 @@ const Demo = () => {
           separator={<span>{config.separator}</span>}
           isTypeNumber={config.isTypeNumber}
           hasErrored={config.hasErrored}
-          inputProps={{ className: 'otp-input__input', disabled: config.isDisabled }}
+          inputProps={{ className: 'otp-field__input', disabled: config.isDisabled }}
         />
       </div>
     </div>
