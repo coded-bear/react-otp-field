@@ -31,34 +31,45 @@ const Demo = () => {
   return (
     <div className="demo">
       <div className="demo__config-view">
-        <Input
-          type="number"
-          name="numInputs"
-          value={config.numInputs}
-          onChange={updateConfig}
-          labelText="number of inputs"
-          min={1}
-          max={numInputsLimit}
-        />
-        <Input
-          type="text"
-          value={value}
-          onChange={({ target }) => setValue(target.value)}
-          labelText="value"
-          maxLength={parseInt(config.numInputs) || 0}
-        />
-        <Input
-          type="text"
-          name="separator"
-          value={config.separator}
-          onChange={updateConfig}
-          labelText="separator"
-          maxLength={1}
-        />
-        <Input type="text" name="regex" value={config.regex} onChange={updateConfig} labelText="onChange regex" />
-        <Checkbox name="isDisabled" checked={config.isDisabled} onChange={updateConfig} labelText="isDisabled" />
-        <Checkbox name="isTypeNumber" checked={config.isTypeNumber} onChange={updateConfig} labelText="isTypeNumber" />
-        <Checkbox name="hasErrored" checked={config.hasErrored} onChange={updateConfig} labelText="hasErrored" />
+        <div>
+          <Input
+            type="number"
+            name="numInputs"
+            value={config.numInputs}
+            onChange={updateConfig}
+            labelText="number of inputs"
+            min={1}
+            max={numInputsLimit}
+          />
+          <Input
+            type="text"
+            value={value}
+            onChange={({ target }) => setValue(target.value)}
+            labelText="value"
+            maxLength={parseInt(config.numInputs) || 0}
+          />
+          <Input
+            type="text"
+            name="separator"
+            value={config.separator}
+            onChange={updateConfig}
+            labelText="separator"
+            maxLength={1}
+          />
+          <Input type="text" name="regex" value={config.regex} onChange={updateConfig} labelText="onChange regex" />
+          <Checkbox name="isDisabled" checked={config.isDisabled} onChange={updateConfig} labelText="isDisabled" />
+          <Checkbox
+            name="isTypeNumber"
+            checked={config.isTypeNumber}
+            onChange={updateConfig}
+            labelText="isTypeNumber"
+          />
+          <Checkbox name="hasErrored" checked={config.hasErrored} onChange={updateConfig} labelText="hasErrored" />
+        </div>
+
+        <a className="link" href="https://github.com/coded-bear/react-otpinput" target="_blank">
+          Documentation and source
+        </a>
       </div>
 
       <div className="demo__content">

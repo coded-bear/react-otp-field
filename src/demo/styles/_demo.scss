@@ -6,6 +6,9 @@
   }
 
   &__config-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 250px;
     height: 100vh;
@@ -30,6 +33,15 @@
     @media (max-width: $md) {
       min-height: auto;
       margin-top: 20px;
+    }
+  }
+
+  .link {
+    color: $color-darkgray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
