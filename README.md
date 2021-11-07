@@ -8,7 +8,7 @@ Customizable OTP Field component for the web built with React.js
 npm install --save react-otp-field
 ```
 
-#### Basic usage:
+## Basic usage
 
 ```jsx
 import React, { useState } from 'react';
