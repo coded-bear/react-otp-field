@@ -35,8 +35,9 @@
 
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
+    transform: translate(0, -50%);
     width: 20px;
     height: 20px;
     background-color: $color-white;
@@ -46,14 +47,12 @@
     &::after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 8px;
-      width: 5px;
-      height: 9px;
+      top: 4px;
+      left: 7px;
+      width: 4px;
+      height: 7px;
       border: solid $color-white;
       border-width: 0 2px 2px 0;
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
   }
