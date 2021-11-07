@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-import './styles/main.scss';
+import { numInputsLimit, numInputsLimitValidation } from '../utils';
 
 import OtpInput from '../../lib';
 import Input from './atoms/Input';
 import Checkbox from './atoms/Checkbox';
-
-import { numInputsLimit, numInputsLimitValidation } from './utils';
 
 const Demo = () => {
   const [value, setValue] = useState('');
@@ -38,7 +36,7 @@ const Demo = () => {
           name="numInputs"
           value={config.numInputs}
           onChange={updateConfig}
-          labelText="Number of inputs"
+          labelText="number of inputs"
           min={1}
           max={numInputsLimit}
         />
@@ -46,7 +44,7 @@ const Demo = () => {
           type="text"
           value={value}
           onChange={({ target }) => setValue(target.value)}
-          labelText="Value"
+          labelText="value"
           maxLength={parseInt(config.numInputs) || 0}
         />
         <Input
@@ -54,10 +52,10 @@ const Demo = () => {
           name="separator"
           value={config.separator}
           onChange={updateConfig}
-          labelText="Separator"
+          labelText="separator"
           maxLength={1}
         />
-        <Input type="text" name="regex" value={config.regex} onChange={updateConfig} labelText="Regex" />
+        <Input type="text" name="regex" value={config.regex} onChange={updateConfig} labelText="onChange regex" />
         <Checkbox name="isDisabled" checked={config.isDisabled} onChange={updateConfig} labelText="isDisabled" />
         <Checkbox name="isTypeNumber" checked={config.isTypeNumber} onChange={updateConfig} labelText="isTypeNumber" />
         <Checkbox name="hasErrored" checked={config.hasErrored} onChange={updateConfig} labelText="hasErrored" />

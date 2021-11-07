@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Demo from './Demo';
+import './styles/main.scss';
+
+import Demo from './components/Demo';
 
 render(<Demo />, document.getElementById('root'));
