@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coded-bear/react-otpinput.git"
+    "url": "git+https://github.com/coded-bear/react-otp-field.git"
   },
   "keywords": [
     "otp",
@@ -31,7 +31,7 @@
   "homepage": "https://coded-bear.github.io/react-otpinput",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coded-bear/react-otpinput/issues"
+    "url": "https://github.com/coded-bear/react-otp-field/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
