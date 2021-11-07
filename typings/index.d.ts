@@ -12,7 +12,7 @@ interface OtpInputProps {
     autoComplete?: string,
     autoFocus?: boolean,
     separator?: JSX.Element,
-    isTypeNumber: boolean,
+    isTypeNumber?: boolean,
     hasErrored?: boolean,
     inputProps?: Object,
 }
