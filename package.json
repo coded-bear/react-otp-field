@@ -1,6 +1,6 @@
 {
   "name": "react-otpinput",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Customizable OTP Input component for the web built with React.js",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "demo:dev": "webpack-dev-server --mode development",
     "demo:build": "webpack --mode production",
     "lint": "eslint 'src/**/*.{js,jsx}' --quiet",
-    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix"
+    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
+    "prepublish": "npm run build",
+    "predeploy": "npm run demo:build",
+    "deploy": "gh-pages -d demo"
   },
   "repository": {
     "type": "git",
@@ -24,11 +27,11 @@
   ],
   "typings": "typings/index.d.ts",
   "author": "Łukasz Warchoł (https://lukaszwarchol.pl/)",
+  "homepage": "https://coded-bear.github.io/react-otpinput",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/coded-bear/react-otpinput/issues"
   },
-  "homepage": "https://github.com/coded-bear/react-otpinput#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
