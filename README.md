@@ -2,6 +2,36 @@
 
 Customizable OTP Field component for the web built with React.js
 
+## Installation
+
+```
+npm install --save react-otp-field
+```
+
+#### Basic usage:
+
+```jsx
+import React, { useState } from 'react';
+import OtpField from 'react-otp-field';
+
+const App = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <OtpField
+      value={value}
+      onChange={setValue}
+      numInputs={6}
+      onChangeRegex={/^([0-9]{0,})$/}
+      autoFocus
+      separator={<span>-</span>}
+      isTypeNumber
+      inputProps={{ className: 'otp-field__input', disabled: false }}
+    />
+  );
+};
+```
+
 ## API
 
 <table>
