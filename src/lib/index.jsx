@@ -17,13 +17,13 @@ const focusOnNextInput = (newValues, currentValues, setFocusInput) => {
   }
 };
 
-const OtpInput = ({
+const OtpField = ({
   value = '',
   onChange = (value) => console.log(value),
   numInputs = 4,
   onChangeRegex,
   labelText = 'Enter verification code',
-  classNames = 'otp-input',
+  classNames = 'otp-field',
   autoComplete = 'off',
   autoFocus = false,
   separator,
@@ -50,7 +50,6 @@ const OtpInput = ({
 
     const newValues = [...values];
 
-    // adding and removing values
     let j = 0;
     values.forEach((element, i) => {
       const isNewValuesAndAnyEmptyInput = !element && !!inputValue;
@@ -84,7 +83,7 @@ const OtpInput = ({
   };
 
   return (
-    <div className={`${classNames} ${hasErrored ? 'otp-input--has-errored' : ''}`.trim()}>
+    <div className={`${classNames} ${hasErrored ? 'otp-field--has-errored' : ''}`.trim()}>
       {values.map((element, index) => (
         <div key={index}>
           <input
@@ -106,7 +105,7 @@ const OtpInput = ({
   );
 };
 
-OtpInput.propTypes = {
+OtpField.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   numInputs: PropTypes.number.isRequired,
@@ -121,4 +120,4 @@ OtpInput.propTypes = {
   inputProps: PropTypes.object,
 };
 
-export default OtpInput;
+export default OtpField;

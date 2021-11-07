@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-declare const OtpInput: React.FunctionComponent<OtpInputProps>;
+declare const OtpField: React.FunctionComponent<OtpFieldProps>;
 
-interface OtpInputProps {
+interface OtpFieldProps {
     value: string,
     onChange: Function,
     numInputs?: number,
@@ -17,5 +17,5 @@ interface OtpInputProps {
     inputProps?: Object,
 }
 
-export { OtpInputProps };
-export default OtpInput;
+export { OtpFieldProps };
+export default OtpField;
