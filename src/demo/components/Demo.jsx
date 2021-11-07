@@ -32,6 +32,8 @@ const Demo = () => {
     <div className="demo">
       <div className="demo__config-view">
         <div>
+          <h1 className="h1">react-otpinput</h1>
+
           <Input
             type="number"
             name="numInputs"

@@ -1,14 +1,15 @@
 .input {
   position: relative;
   display: block;
+  margin-top: 20px;
 
   &__label-text {
-    margin-bottom: 10px;
+    margin: 0 0 10px;
   }
 
   input {
     width: 100%;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border: 2px solid $color-gray;
     border-radius: 5px;
     background-color: $color-white;

@@ -10,10 +10,10 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    max-width: 250px;
+    max-width: 270px;
     height: 100vh;
     overflow-y: auto;
-    padding: 20px;
+    padding: 30px;
     background-color: $color-lightgray;
 
     @media (max-width: $md) {
@@ -28,15 +28,15 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
 
     @media (max-width: $md) {
       min-height: auto;
-      margin-top: 20px;
     }
   }
 
   .link {
+    margin-top: 30px;
     color: $color-darkgray;
     text-decoration: none;
 
