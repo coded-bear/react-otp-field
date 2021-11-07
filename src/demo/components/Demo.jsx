@@ -70,7 +70,7 @@ const Demo = () => {
         </div>
 
         <a className="link" href="https://github.com/coded-bear/react-otpinput" target="_blank">
-          Documentation and source
+          Documentation and Source
         </a>
       </div>
 
