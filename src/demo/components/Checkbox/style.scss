@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.checkbox {
+    position: relative;
+    display: flex;
+    margin-top: 2rem;
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked {
+            ~ .checkmark {
+                background-color: $color-blue;
+                border: 0;
+            }
+
+            .checkmark {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__label-text {
+        width: fit-content;
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding-left: 3.5rem;
+        cursor: pointer;
+        text-align: left;
+    }
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 2rem;
+    height: 2rem;
+    box-sizing: border-box;
+    background-color: $color-white;
+    border: 2px solid $color-gray;
+    border-radius: 0.5rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0.4rem;
+        left: 0.7rem;
+        width: 0.4rem;
+        height: 0.7rem;
+        border: solid $color-white;
+        border-width: 0 0.2rem 0.2rem 0;
+        transform: rotate(45deg);
+    }
+}

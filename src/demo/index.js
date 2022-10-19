@@ -1,8 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-import './styles/main.scss';
+import './styles/globals.css';
 
 import Demo from './components/Demo';
 
-render(<Demo />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <Demo />
+    </React.StrictMode>,
+);

@@ -19,20 +19,20 @@ import React, { useState } from 'react';
 import OtpField from 'react-otp-field';
 
 const App = () => {
-  const [value, setValue] = useState('');
+    const [value, setValue] = useState('');
 
-  return (
-    <OtpField
-      value={value}
-      onChange={setValue}
-      numInputs={6}
-      onChangeRegex={/^([0-9]{0,})$/}
-      autoFocus
-      separator={<span>-</span>}
-      isTypeNumber
-      inputProps={{ className: 'otp-field__input', disabled: false }}
-    />
-  );
+    return (
+        <OtpField
+            value={value}
+            onChange={setValue}
+            numInputs={6}
+            onChangeRegex={/^([0-9]{0,})$/}
+            autoFocus
+            separator={<span>-</span>}
+            isTypeNumber
+            inputProps={{ className: 'otp-field__input', disabled: false }}
+        />
+    );
 };
 ```
 
@@ -120,11 +120,11 @@ const App = () => {
             <td>Type number for inputs.</td>
         </tr>
         <tr>
-            <td>hasErrored</td>
+            <td>hasError</td>
             <td>Boolean</td>
             <td>false</td>
             <td>false</td>
-            <td>Error class 'otp-field--has-errored' for otp-field component.</td>
+            <td>Error class 'otp-field--has-error' for otp-field component.</td>
         </tr>
         <tr>
             <td>inputProps</td>

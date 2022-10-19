@@ -1,0 +1,106 @@
+@import '../../styles/variables.scss';
+
+.demo {
+    display: flex;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+    }
+
+    &__config-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 27rem;
+        height: 100vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 3rem;
+        background-color: $color-lightgray;
+
+        @media (max-width: $md) {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 3rem 2rem;
+
+        @media (max-width: $md) {
+            min-height: auto;
+        }
+    }
+
+    .link {
+        margin-top: 3rem;
+        color: $color-darkgray;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .h1 {
+        margin: 0 0 3rem;
+        color: $color-blue;
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .otp-field {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__input {
+            width: 5rem;
+            height: 5rem;
+            margin: 1rem;
+            box-sizing: border-box;
+            border: 0.2rem solid $color-gray;
+            border-radius: 0.5rem;
+            color: $color-blue;
+            font-family: 'Rubik', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-align: center;
+
+            // Chrome, Safari, Edge, Opera
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                appearance: none;
+                margin: 0;
+            }
+
+            // Firefox
+            &[type='number'] {
+                appearance: textfield;
+            }
+
+            &:focus {
+                border-color: $color-blue;
+                outline: none;
+            }
+
+            &:disabled {
+                background-color: $color-lightgray;
+                color: $color-gray;
+            }
+        }
+
+        &--has-error {
+            .otp-field__input {
+                border-color: $color-error;
+            }
+        }
+    }
+}
