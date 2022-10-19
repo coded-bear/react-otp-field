@@ -1,5 +1,11 @@
 # dependencies
 /node_modules
+yarn.lock
+package-lock.json
+
+# logs
+logs
+*.log
 
 # builds
 /lib
